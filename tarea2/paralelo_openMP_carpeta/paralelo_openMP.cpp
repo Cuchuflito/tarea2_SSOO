@@ -42,9 +42,13 @@ int main() {
     cout << "Conversión terminada" << endl;
     cout << "Execution time: " << duration.count() << " milliseconds" << endl;
 
-    // Mostrar la imagen original y la imagen en escala de grises
-    imshow("Imagen Original", image);
-    imshow("Imagen escala de grises", grayscaleImage);
+    namedWindow("Imagen Real", WINDOW_NORMAL);
+    resizeWindow("Imagen Real", image.cols, image.rows);
+    imshow("Imagen Real", image);
+
+    namedWindow("Imagen en escala de grises", WINDOW_NORMAL);
+    resizeWindow("Imagen en escala de grises", grayscaleImage.cols, grayscaleImage.rows);
+    imshow("Imagen en escala de grises", grayscaleImage);
     waitKey(0);
 
     return 0;

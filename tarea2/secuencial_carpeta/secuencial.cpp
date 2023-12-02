@@ -44,7 +44,12 @@ int main() {
     cout << "Execution time: " << duration.count() << " milliseconds" << endl;
 
    
+    namedWindow("Imagen Real", WINDOW_NORMAL);
+    resizeWindow("Imagen Real", image.cols, image.rows);
     imshow("Imagen Real", image);
+
+    namedWindow("Imagen en escala de grises", WINDOW_NORMAL);
+    resizeWindow("Imagen en escala de grises", grayscaleImage.cols, grayscaleImage.rows);
     imshow("Imagen en escala de grises", grayscaleImage);
     waitKey(0);
 
