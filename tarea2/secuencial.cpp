@@ -8,28 +8,27 @@ using namespace std;
 using namespace chrono;
 
 int main() {
-    cout << "Loading image..." << endl;
+    cout << "Cargando..." << endl;
 
-    // Leer la imagen a color
+    
     Mat image = imread("imagen.png", IMREAD_COLOR);
 
     if (image.empty()) {
-        cerr << "Error al cargar la imagen." << endl;
+        cerr << "Error al cargar" << endl;
         return -1;
     }
 
     cout << "Rows (height): " << image.rows << " Cols (width): " << image.cols << endl;
-    cout << "Start sequential conversion..." << endl;
+    cout << "Comienza transformación secuencial." << endl;
 
-    // Iniciar el cronómetro
+    
     auto start_time = high_resolution_clock::now();
 
-    // Convertir la imagen a escala de grises de manera secuencial
+    
     Mat grayscaleImage;
-    cvtColor(image, grayscaleImage, COLOR_BGR2GRAY);
+    cvtColor(image, grayscaleImage, COLOR_BGR2GRAY); //conversión secuencial
 
-    // Mostrar los primeros valores de las filas
-    cout << "First values of some rows:" << endl;
+    cout << "Primeros valores nueva imagen" << endl;
     for (int r = 0; r < min(5, grayscaleImage.rows); r++) {
         for (int c = 0; c < min(5, grayscaleImage.cols); c++) {
             cout << static_cast<int>(grayscaleImage.at<uchar>(r, c)) << " ";
@@ -37,16 +36,16 @@ int main() {
         cout << endl;
     }
 
-    // Detener el cronómetro y calcular el tiempo transcurrido
-    auto stop_time = high_resolution_clock::now();
+    
+    auto stop_time = high_resolution_clock::now(); //se para y se muestra el tiempo de ejecución
     auto duration = duration_cast<milliseconds>(stop_time - start_time);
 
-    cout << "End sequential conversion." << endl;
+    cout << "Conversión secuencial terminada." << endl;
     cout << "Execution time: " << duration.count() << " milliseconds" << endl;
 
-    // Mostrar la imagen original y la imagen en escala de grises
-    imshow("Original Image", image);
-    imshow("Grayscale Image", grayscaleImage);
+   
+    imshow("Imagen Real", image);
+    imshow("Imagen en escala de grises", grayscaleImage);
     waitKey(0);
 
     return 0;

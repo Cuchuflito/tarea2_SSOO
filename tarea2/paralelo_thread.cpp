@@ -9,15 +9,14 @@ using namespace cv;
 using namespace std;
 using namespace chrono;
 
-// Función para procesar una porción de la imagen en escala de grises
+// Función para procesar una parte de la imagen en escala de grises
 void processImage(const Mat& input, Mat& output, int startRow, int endRow) {
     cvtColor(input.rowRange(startRow, endRow), output.rowRange(startRow, endRow), COLOR_BGR2GRAY);
 }
 
 int main() {
-    cout << "Loading image..." << endl;
+    cout << "Cargando." << endl;
 
-    // Leer la imagen a color
     Mat image = imread("imagen.png", IMREAD_COLOR);
 
     if (image.empty()) {
@@ -31,16 +30,16 @@ int main() {
     // Iniciar el cronómetro
     auto start_time = high_resolution_clock::now();
 
-    // Convertir la imagen a escala de grises
+    
     Mat grayscaleImage(image.size(), CV_8UC1);
 
-    // Número de threads (ajústalo según el número de núcleos de tu CPU)
-    int numThreads = 4;
+    // THREADS
+    int numThreads = 1;
 
-    // Vector para almacenar los threads
+   
     vector<thread> threads;
 
-    // Dividir la imagen en segmentos para procesar en paralelo
+    // Dividir la imagen 
     int rowsPerThread = image.rows / numThreads;
     int startRow = 0;
 
@@ -55,16 +54,16 @@ int main() {
         t.join();
     }
 
-    // Detener el cronómetro y calcular el tiempo transcurrido
+    // Detener el cronómetro 
     auto stop_time = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(stop_time - start_time);
 
-    cout << "End parallel conversion." << endl;
+    cout << "Fin Conversión." << endl;
     cout << "Execution time: " << duration.count() << " milliseconds" << endl;
 
-    // Mostrar la imagen original y la imagen en escala de grises
-    imshow("Original Image", image);
-    imshow("Grayscale Image", grayscaleImage);
+    
+    imshow("Imagen Original", image);
+    imshow("Imagen Escala de grises", grayscaleImage);
     waitKey(0);
 
     return 0;

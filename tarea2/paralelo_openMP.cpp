@@ -9,23 +9,23 @@ using namespace std;
 using namespace chrono;
 
 int main() {
-    cout << "Loading image..." << endl;
+    cout << "Cargando." << endl;
 
     // Leer la imagen a color
     Mat image = imread("imagen.png", IMREAD_COLOR);
 
     if (image.empty()) {
-        cerr << "Error al cargar la imagen." << endl;
+        cerr << "Error al cargar." << endl;
         return -1;
     }
 
     cout << "Rows (height): " << image.rows << " Cols (width): " << image.cols << endl;
-    cout << "Start parallel conversion..." << endl;
+    cout << "Iniciar conversión paralela" << endl;
 
     // Iniciar el cronómetro
     auto start_time = high_resolution_clock::now();
 
-    // Convertir la imagen a escala de grises en paralelo con OpenMP
+    // Convertir imagen paralelo con OpenMP
     Mat grayscaleImage(image.size(), CV_8UC1);
 #pragma omp parallel for
     for (int r = 0; r < image.rows; r++) {
@@ -35,16 +35,16 @@ int main() {
         }
     }
 
-    // Detener el cronómetro y calcular el tiempo transcurrido
+    // Detener el cronómetro
     auto stop_time = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(stop_time - start_time);
 
-    cout << "End parallel conversion." << endl;
+    cout << "Conversión terminada" << endl;
     cout << "Execution time: " << duration.count() << " milliseconds" << endl;
 
     // Mostrar la imagen original y la imagen en escala de grises
-    imshow("Original Image", image);
-    imshow("Grayscale Image", grayscaleImage);
+    imshow("Imagen Original", image);
+    imshow("Imagen escala de grises", grayscaleImage);
     waitKey(0);
 
     return 0;
