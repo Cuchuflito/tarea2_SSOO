@@ -1,0 +1,19 @@
+EJECUCIÓN DE LOS PROGRAMAS
+
+- Cabe destacar que cada archivo.cpp más una copia respectiva de la imagen, QUE DEBE LLAMARSE "imagen.png" está en su carpeta respectiva. 
+
+- El archivo Makefile se encuentra dentro de tarea2; con el fin de mantener un orden existe un único Makefile para los 3 códigos. 
+
+- A su vez, los ejecutables están en la carpeta tarea 2. Se pueden ejecutar por ahí o por consola. Al ejecutarse por consola (terminal) 
+se verán los datos requeridos (filas, columnas, tiempo) 
+
+- El archivo paralelo_thread.cpp puede ser editado para cambiar el número de threads utilizados para convertir la imagen. Entre más threads, menor tiempo. 
+
+- Cada vez que se edita un archivo.cpp se debe correr Makefile para compilar cambios. 
+
+- Puede ser la imagen que se estime pertinente, pero debe llevar por nombre "imagen", extensión png y estar ubicada en cada carpeta
+ de cada código en C (ya sea paralelo_thread_carpeta, paralelo_openMP_carpeta o secuencial_carpeta) 
+
+- por ende, se VUELVE a repetir que la imagen debe llamarse "imagen.png" al menos que se editen los .cpp y se corra el archivo Makefile para compilar cambios.
+
+- Por último, resaltar que el proyecto está hecho por Alfredo Sabando Urrutia y Javiera Salazar Sánchez
