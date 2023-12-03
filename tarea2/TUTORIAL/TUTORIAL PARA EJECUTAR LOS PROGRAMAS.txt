@@ -17,3 +17,5 @@ se verán los datos requeridos (filas, columnas, tiempo de ejecución)
 - por ende, se VUELVE a repetir que la imagen debe llamarse "imagen.png" al menos que se editen los .cpp y se corra el archivo Makefile para compilar cambios.
 
 - Por último, resaltar que el proyecto está hecho por Alfredo Sabando Urrutia y Javiera Salazar Sánchez
+
+- Cada alumno tiene su rama de trabajo. Luego de terminado y arreglado el proyecto; se subió todo a la rama default (main)
