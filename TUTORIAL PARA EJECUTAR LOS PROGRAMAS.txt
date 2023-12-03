@@ -1,11 +1,11 @@
 EJECUCIÓN DE LOS PROGRAMAS
 
-- Cabe destacar que cada archivo.cpp más una copia respectiva de la imagen, QUE DEBE LLAMARSE "imagen.png" está en su carpeta respectiva. 
+- Cabe destacar que cada carpeta más una copia respectiva de la imagen, QUE DEBE LLAMARSE "imagen.png", está en su carpeta respectiva. 
 
-- El archivo Makefile se encuentra dentro de tarea2; con el fin de mantener un orden existe un único Makefile para los 3 códigos. 
+- El archivo Makefile se encuentra dentro de tarea2. Con el fin de mantener un orden existe un único Makefile para los 3 códigos. 
 
 - A su vez, los ejecutables están en la carpeta tarea 2. Se pueden ejecutar por ahí o por consola. Al ejecutarse por consola (terminal) 
-se verán los datos requeridos (filas, columnas, tiempo) 
+se verán los datos requeridos (filas, columnas, tiempo de ejecución) 
 
 - El archivo paralelo_thread.cpp puede ser editado para cambiar el número de threads utilizados para convertir la imagen. Entre más threads, menor tiempo. 
 
